@@ -34,12 +34,13 @@ The model makes use of the Transformer architecture (Vaswani et. al., 2017) with
 ### Data Processing 
 While the Vanilla model simply uses the raw aligned corpus for training, the Assisted model first uses Stanza'a Universal Dependency Parser to generate the dependency parses for each sentence and reformats the inputs to the Transformer encoder the following way:
 
-**Raw Sentence**
+ - **Raw Sentence**
 ```There are also specific discussions , public profile debates and project discussions```
- **Dep Tags:**
+ -  **Dep Tags:**
 ```expl root advmod amod nsubj punct amod compound conj cc compound conj punct```
-**Resultant Paired Sequence:**
+ - **Resultant Paired Sequence:**
 ```<There @ expl> <are @ root> <also @ advmod> <specific @ amod> <discussions @ nsubj> <, @ punct> <public @ amod> <profile @ compound> <debates @ conj> <and @ cc> <project @ compound> <discussions @ conj> <. @ punct>```
+
 ## Author
 
   **KV Aditya Srivatsa** (k.v.aditya@research.iiit.ac.in)

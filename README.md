@@ -1,1 +1,1 @@
-# parsing-assisted-sentence-simplification
+# Parsing Assisted Sentence Simplification

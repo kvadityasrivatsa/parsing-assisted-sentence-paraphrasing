@@ -9,22 +9,32 @@ This project utilizes dependency labels of sentences along with the sentence tok
 
 ### Installation
 ``` 
-git clone https://github.com/kvadityasrivatsa/parsing-assisted-sentence-simplification
-cd parsing-assisted-sentence-simplification
-./setup.sh
+$ git clone https://github.com/kvadityasrivatsa/parsing-assisted-sentence-simplification
+$ cd parsing-assisted-sentence-simplification
+$ ./setup.sh
 ```
 ### How to use
+#### Training
 Train the submission model on [Google’s PAWS-Wiki dataset](https://github.com/google-research-datasets/paws)
 - for Vanilla model (Transformer):
 ```
-bash train_vanilla.sh <no. of max epochs>
+$ bash train_vanilla.sh <no. of max epochs>
 ```
    
 - for Assisted Model (Transformer+Aligned parsed tokens):
 ```
-bash train_assisted.sh <no. of max epochs>
+$ bash train_assisted.sh <no. of max epochs>
 ```
 
+#### Evaluation
+
+```
+# generate outputs
+$ bash eval_vanilla.sh
+$ bash eval_assisted.sh
+# align outputs and compare performance
+$ python3 combine_and_score.py # output stored at combined_output.txt
+```
 ## Pretrained Model
 The checkpoint for the model with the best scores is available [here](https://drive.google.com/drive/folders/1w6fE4kO3WvNNuNMO_7jBQ91KCYR8cfIj?usp=sharing)
 
